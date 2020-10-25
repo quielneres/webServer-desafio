@@ -18,7 +18,7 @@ Route::get('/', function () {
 
     // return response()->json({1 => '2'});
 
-    return response()->json(['name' => 'Abigail', 'state' => 'CA']);
+    return response()->json(['api' => 'api pague toop v1']);
 
 });
 
@@ -26,3 +26,7 @@ Route::get('/discover', ['as' => 'discover', 'uses' => 'CatalogController@discov
 Route::get('/trending', ['as' => 'trending', 'uses' => 'CatalogController@trending']);
 Route::get('/movie/{id}', ['as' => 'movie', 'uses' => 'CatalogController@movie']);
 Route::get('/genres', ['as' => 'genres', 'uses' => 'CatalogController@genres']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
