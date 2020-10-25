@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('api')->get('/', function (Request $request) {
     return response()->json(['api' => 'v-1.0.0']);
 });
+
+Route::post('register-user', 'Api\\UserController@register');
